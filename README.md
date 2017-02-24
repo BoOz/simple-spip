@@ -29,7 +29,9 @@ Créer un repertoire `www` pour le projet.
 Créer un fichier config/mes_options.php contenant au moins
 ```
 <?php
-$GLOBALS['dossier_squelettes'] = "www:simple-spip" ;
+if(_DIR_RESTREINT)
+	$GLOBALS['dossier_squelettes'] = "www:simple-spip" ;
+
 ```
 
 Installer SPIP `mon_site/ecrire`.

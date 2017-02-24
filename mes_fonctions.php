@@ -1,6 +1,6 @@
 <?php
 
-/* Refaire du Z  */
+/* Refaire du Z en plus simple */
 // http://doc.spip.org/@public_styliser_dist
 include_spip("public/styliser");
 function public_styliser($fond, $contexte, $lang='', $connect='', $ext='html') {
@@ -41,7 +41,7 @@ function public_styliser($fond, $contexte, $lang='', $connect='', $ext='html') {
 	// Modif //
 	// var_dump($fond);
 	// Si la page appelée existe dans contenu/ alors on renvoie sur le sommaire
-	if($s = find_in_path("contenu/" . $fond . ".html")){
+	if($s = find_in_path("pages/" . $fond . ".html")){
 		$sommaire = str_replace(".html","",find_in_path("sommaire.html"));
 		$squelette = $sommaire ;
 	}
@@ -50,4 +50,3 @@ function public_styliser($fond, $contexte, $lang='', $connect='', $ext='html') {
 	return array($squelette, $ext, $ext, "$squelette.$ext");
 }
 
-/**/
