@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>#NOM_SITE_SPIP</title>
+	<INCLURE{fond=inclure/head}>
+</head>
+<body>
+	<header>
+	<INCLURE{fond=inclure/entete}>
+
+	<INCLURE{fond=inclure/menu}>
+	
+	</header>
+	
+	<section>
+		<h2 class="ui header">Erreur 404
+		<div class="sub header">
+			Page non trouvée.
+		</div>
+		</h2>
+		
+		<div class="ui negative message">
+			<div class="header">
+				Oups
+			</div>
+			<p>La page [<b>(#ENV{page})</b>] n'existe pas.</p>
+		</div>
+		
+		[(#AUTORISER{webmestre}|oui)
+		<div class="ui positive message">
+			<div class="header">
+				Webmestres
+			</div>
+			<p>
+				Créer un fichier `contenu/#ENV{page}.html`.
+			</p>
+			<p>
+				Créer des fichiers `mon_squelette.html` dans le répertoire `contenu` et les appeler avec l'url `[(#URL_PAGE{mon_squelette})]`
+			</p>
+		</div>
+		
+		
+		]
+	</section>
+
+	<footer>
+	</footer>
+</body>
+</html>
+

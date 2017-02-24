@@ -1,0 +1,124 @@
+<INCLURE{fond=securite}>
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="#CHARSET">
+	<title>#NOM_SITE_SPIP</title>
+	<INCLURE{fond=inclure/head}>
+</head>
+<body>
+	
+	<header>
+		<div class="ui center aligned container">
+			<INCLURE{fond=inclure/entete}>
+			
+			<INCLURE{fond=inclure/menu}>
+		</div>
+	</header>
+	
+	<div class="ui hidden divider"></div>
+	
+	<section>
+		<div class="ui center aligned container">
+			
+			<div id="alertes" data-fond="inclure/alertes" class="async_load ui left aligned container"></div>
+			
+			<div class="ui left aligned container">
+				<INCLURE{fond=contenu/#ENV{page,sommaire}}{env}>
+			</div>
+		</div>
+	</section>
+	
+	<div class="ui hidden divider"></div>
+	
+	<footer>
+	<INCLURE{fond=inclure/pied}>
+	</footer>
+
+</body>
+<script>
+$(document)
+	.ready(function() {
+		// Menu
+		$('.ui.menu .ui.dropdown').dropdown({
+			on: 'hover'
+		});
+		$('.ui.menu a.item')
+			.on('click', function() {
+			$(this)
+				.addClass('active')
+				.siblings()
+				.removeClass('active')
+			;
+			})
+		;
+		
+		$( ".async_load" ).each(function( index ) {
+			// alert( index + ": " + $( this ).attr("data-fond") );
+			$( this ).load("spip.php?action=async_load&async_fond=" + $(this).attr("data-fond") , function(response, status) {
+					if (status == "error") {
+						$(this).html("<a href='#' class='reload_soap'>reload</a>");
+						$(this).addClass("erreur");
+						return false;
+					}else{
+							if(response.match(/^Erreur/i)){
+								$(this).addClass("erreur");
+							}
+							if(response.length>250){
+								$(this).addClass("soap").addClass("erreur");
+							}
+							$(this).not(".erreur").addClass("ok");
+					}
+			});
+		});
+
+		// alertes
+		$('.message .close')
+			.on('click', function() {
+				$(this)
+					.closest('.message')
+					.transition('fade')
+				;
+			})
+		;
+
+		// Les infos en temps réèl se rechargent au focus sur la page.
+		$(window).focus(function() {
+			$('.live_focus').each(function( index ) {
+				// alert( index + ": " + $( this ).attr("data-fond") );
+				$( this ).load("spip.php?action=async_load&async_fond=" + $(this).attr("data-fond") , function(response, status) {
+						if (status == "error") {
+							$(this).html("<a href='#' class='reload_soap'>reload</a>");
+							$(this).addClass("erreur");
+							return false;
+						}else{
+								if(response.match(/^Erreur/i)){
+									$(this).addClass("erreur");
+								}
+								if(response.length>250){
+									$(this).addClass("soap").addClass("erreur");
+								}
+								$(this).not(".erreur").addClass("ok");
+						}
+				});
+				});
+			}
+		);
+		
+		
+		// Ajout ui pour limiter la hauteur des conteneurs html.
+		function limite_hauteur() {
+			$('.hauteur_limitee').each(function(){
+				if($(this).height() > 350)
+					$(this).css('cursor','pointer').addClass('overflow').click(function(){
+						$(this).toggleClass('overflow');
+					});
+				}
+			);
+		}
+		limite_hauteur() ;
+
+});
+</script>
+</html>
+

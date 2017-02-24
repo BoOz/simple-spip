@@ -1,0 +1,40 @@
+<?php
+include_spip('inc/autoriser');
+if(!autoriser('ecrire') AND $GLOBALS['visiteur_session']['statut'] != "6forum"){ 
+?>
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Le Monde diplomatique</title>
+	<INCLURE{fond=inclure/head}>
+  <style>
+  .column {
+  	margin-top:20px;
+	  max-width: 450px;
+	}
+	#pass_securise{display:none}
+  </style>
+</head>
+<body>
+
+    <header>
+       <INCLURE{fond=inclure/entete}>
+    </header>
+
+	<div class="ui middle aligned center aligned grid">
+	  <div class="column">
+		<h2 class="ui teal header">
+		  <div class="content" style="display:none">
+			Connexion
+		  </div>
+		</h2>
+		#FORMULAIRE_LOGIN
+	  </div>
+	</div>
+</body>
+</html>
+<?php
+exit; 
+} 
+?>

@@ -1,0 +1,33 @@
+		<div class="ui secondary menu">
+			<div class="active item" href="[(#URL_PAGE{page})]">Menu 1</div>
+			<a class="item">Menu 2</a>
+			<a class="item">Menu 3</a>
+			<a class="item">Menu 4</a>
+			<div class="ui dropdown item" tabindex="0">
+				Autres
+				<i class="dropdown icon"></i>
+				<div class="menu" tabindex="-1">
+					<div class="item">Menu 5</div>
+					<div class="divider"></div>
+					<div class="item">Menu 6</div>
+					<div class="divider"></div>
+					<div class="item">Menu 7</div>
+					<div class="item">Menu 8</div>
+				</div>
+			</div>
+			<div class="right menu">
+				<div class="item">
+					<form action="spip.php" method="get">
+						<input type="hidden" value="sommaire" name="page" />
+						<input type="hidden" value="recherche" name="contenu" />
+						<div class="ui action left icon input">
+							<i class="search icon"></i>
+							<input placeholder="Recherche" type="text" name="recherche">
+							<button class="ui button">Recherche</button>
+						</div>
+					</form>
+				</div>
+				<a class="item" href="[(#URL_PAGE{sommaire})]">lien</a>
+			</div>
+		</div>
+		
