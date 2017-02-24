@@ -18,7 +18,7 @@ Simple-spip est un modèle de site SPIP (www.spip.net) qui permet d'afficher des
 Dans le terminal
 ```
 cd la/ou/est/spip
-git clone ...
+git clone https://github.com/BoOz/simple-spip.git
 ```
 
 Dans mes_options.php
