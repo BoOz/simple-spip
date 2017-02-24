@@ -24,6 +24,7 @@ git clone https://github.com/spip/SPIP.git mon_site
 cd mon_site
 git clone https://github.com/BoOz/simple-spip.git
 ```
+Créer un repertoire `www` pour le projet.
 
 Créer un fichier config/mes_options.php contenant au moins
 ```
@@ -31,9 +32,13 @@ Créer un fichier config/mes_options.php contenant au moins
 $GLOBALS['dossier_squelettes'] = "www:simple-spip" ;
 ```
 
-Créer un repertoire `www` pour le projet.
+Le site est alors visible à l'adresse `mon_site`.
 
 
 
+
+
+
+----------
 
 * de manière analogue au systeme Z SPIP.
