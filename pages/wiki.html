@@ -2,6 +2,8 @@
 
 [(#REM) Wiki reservé aux webmestres ]
 [(#AUTORISER{webmestre}|non) <?php die(); ?> ]
+[(#SPIP_VERSION|>={3}|non) #SET{url_creer_article,ecrire/?exec=articles_edit&id_rubrique=1&new=oui} ]
+[(#SPIP_VERSION|>={3}|oui) #SET{url_creer_article,ecrire/?exec=article_edit&id_rubrique=1&new=oui} ]
 
 <div class="ui hidden divider"></div>
 
@@ -18,7 +20,7 @@
 <div class="ui hidden divider"></div>
 
 </BOUCLE_maj>
-<BOUCLE_principale(ARTICLES){id_article=#ENV{id_article,7}}{statut IN prop,prepa,publie}>
+<BOUCLE_principale(ARTICLES){id_article=#ENV{id_article,1}}{statut IN prop,prepa,publie}>
 
 <div class="ui text container">
 	<div class="ui right floated segment">
@@ -29,7 +31,7 @@
 				#TITRE
 			</a>
 			</BOUCLE_r>
-			<a class="item[ (#EXPOSE|oui)active]" href="./ecrire/?exec=articles_edit&id_rubrique=1&new=oui">
+			<a class="item[ (#EXPOSE|oui)active]" href="#GET{url_creer_article}">
 				+ ajouter un article
 			</a>
 		</div>
@@ -62,4 +64,16 @@
 	</div>
 </div>
 </BOUCLE_principale>
+		<div class="ui positive message">
+			<div class="header">
+				Webmestres
+			</div>
+			<p>
+				<a class="item" href="#GET{url_creer_article}">
+					+ ajouter un article
+				</a>
+			</p>
+		</div>
+<//B_principale>
 
+<div class="ui hidden divider"></div>
