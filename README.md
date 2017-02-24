@@ -9,7 +9,7 @@ Simple-spip est un modèle de site SPIP (www.spip.net) qui permet d'afficher des
 - L'affichage est produit avec l'interface Semantic-ui : http://semantic-ui.com/
 
 ## Personnalisation
-- les fichiers par defaut de `simple-spip` sont surchargés par les fichiers placés dans le répertoire `www`.
+- les fichiers par defaut de `simple-spip` sont surchargés par les fichiers placés dans le répertoire `www` (à créer).
 - pour créer une page web, ajouter un squelette spip avec le contenu de la page dans le répertoire `pages`
 
 ### Mode accès restreint
