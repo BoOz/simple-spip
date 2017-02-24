@@ -14,9 +14,15 @@ Simple-spip est un modèle de site SPIP (www.spip.net) qui permet d'afficher des
 
 ### Chargement asynchrones de blocs
 
-Pour charger en ajax le bloc `inclure/alertes.html` avec `class="async_load"` et `data-fond="inclure/alertes"`
+Charger en ajax le bloc `inclure/alertes.html` avec `class="async_load"` et `data-fond="inclure/alertes"`
 ```
-    <div id="alertes" data-fond="inclure/alertes" class="async_load ui left aligned container"></div>
+    <div id="alertes" data-fond="inclure/alertes" class="async_load"></div>
+```
+### Bloc en temps réel
+
+Recharger un bloc au focus avec `class=live_focus`
+```
+<div id="temps_reel" data-fond="inclure/live_focus" class="async_load live_focus">
 ```
     
 ### Mode accès restreint
