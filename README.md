@@ -10,7 +10,7 @@ Simple-spip est un modèle de site SPIP (www.spip.net) qui permet d'afficher des
 
 ## Personnalisation
 - les fichiers par defaut de `simple-spip` sont surchargés par les fichiers placés dans le répertoire `www` (à créer).
-- pour créer une page web, ajouter un squelette spip avec le contenu de la page dans le répertoire `pages`
+- pour créer une page web, ajouter un squelette spip avec le contenu de la page dans le répertoire `pages`, puis afficher la page `mon_site/?page=nom_de_la_page`
 
 ### Mode accès restreint
 - Avec l'option accès restreint activée, l'accès est soumis à l'identification par email et mot de passe.
