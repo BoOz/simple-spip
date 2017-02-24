@@ -7,14 +7,14 @@ Simple-spip est un modèle de site SPIP (www.spip.net) qui permet d'afficher des
 - Les pages du site sont des squelettes SPIP placés dans le répertoire `pages`
 - Les pages sont affichées avec l'interface Semantic-ui : http://semantic-ui.com/
 
-** Personnalisation
+** Personnalisation **
 
 - les pages et fichiers par defaut de `simple-spip` sont surchargés par les fichiers placés dans le répertoire `www`.
 
 Mode accès restreint
 - Avec l'option accès restreint activée, l'accès est soumis à l'identification par email et mot de passe.
 
-** Installation
+** Installation **
 
 Dans le terminal
 ```
