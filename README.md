@@ -15,9 +15,11 @@ Simple-spip est un modèle de site SPIP (www.spip.net) qui permet d'afficher des
 
 ## Installation
 
-Dans le terminal
+Pour créer un nouveau projet `simple-spip` nommé `mon_simple_spip`, taper dans le terminal :
+
 ```
-cd la/ou/est/spip
+git clone https://github.com/spip/SPIP.git mon_simple-spip
+cd mon_simple-spip
 git clone https://github.com/BoOz/simple-spip.git
 ```
 
