@@ -20,7 +20,7 @@ Simple-spip est un modèle de site SPIP (www.spip.net) qui permet d'afficher des
 Pour créer un nouveau projet `simple-spip` nommé `mon_site`, taper dans le terminal :
 
 ```
-git clone https://github.com/spip/SPIP.git mon_site
+svn co svn://trac.rezo.net/spip/branches/spip-3.1 mon_site
 cd mon_site
 git clone https://github.com/BoOz/simple-spip.git
 ```
@@ -32,7 +32,7 @@ Créer un fichier config/mes_options.php contenant au moins
 $GLOBALS['dossier_squelettes'] = "www:simple-spip" ;
 ```
 
-Le site est alors visible à l'adresse `mon_site`.
+Installer SPIP `mon_site/ecrire`.
 
 
 
