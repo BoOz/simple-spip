@@ -23,7 +23,8 @@ cd mon_simple-spip
 git clone https://github.com/BoOz/simple-spip.git
 ```
 
-Dans mes_options.php
+Créer un fichier config/mes_options.php
 ```
+<?php
 $GLOBALS['dossier_squelettes'] = "www:simple-spip" ;
 ```
