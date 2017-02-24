@@ -12,7 +12,7 @@ Simple-spip est un modèle de site SPIP (www.spip.net) qui permet d'afficher des
 - les fichiers par defaut de `simple-spip` sont surchargés par les fichiers placés dans le répertoire `www` (à créer).
 - pour créer une page web, ajouter un squelette spip avec le contenu de la page dans le répertoire `pages`, puis afficher la page `mon_site/?page=nom_de_la_page`
 
-### chargement asynchrones de blocs
+### Chargement asynchrones de blocs
 
 Pour charger en ajax le bloc `inclure/alertes.html` avec `class="async_load"` et `data-fond="inclure/alertes"`
 ```
