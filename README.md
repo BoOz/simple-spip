@@ -18,7 +18,7 @@ Charger en ajax le bloc `inclure/alertes.html` avec `class="async_load"` et `dat
 ```
 <div id="alertes" data-fond="inclure/alertes" class="async_load"></div>
 ```
-### Bloc en temps réel
+### Blocs en temps réel
 
 Recharger un bloc au focus avec `class=live_focus`
 ```
