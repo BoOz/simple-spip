@@ -4,7 +4,7 @@ Installer rapidement un site SPIP + Semantic-ui
 
 Simple-spip est un modèle de site SPIP (www.spip.net) qui permet d'afficher des données et des pages web rapidement.
 
-- Les pages sont affichées dans un unique gabarit `sommaire.html` qui inclue lui-même les pages `pages/nom_de_la_page.html`*.
+- Les pages sont affichées dans un unique gabarit `sommaire.html` qui inclue lui-même les pages `pages/nom_de_la_page.html` *.
 - Le contenu des pages est généré par les squelettes SPIP placés dans le répertoire `pages`
 - L'affichage est produit avec l'interface Semantic-ui : http://semantic-ui.com/
 
