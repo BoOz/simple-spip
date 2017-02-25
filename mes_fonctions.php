@@ -40,7 +40,7 @@ function public_styliser($fond, $contexte, $lang='', $connect='', $ext='html') {
 	
 	// Modif //
 	// var_dump($fond);
-	// Si la page appelée existe dans contenu/ alors on renvoie sur le sommaire
+	// Si la page appelée existe dans pages/ alors on renvoie sur le sommaire
 	if($s = find_in_path("pages/" . $fond . ".html")){
 		$sommaire = str_replace(".html","",find_in_path("sommaire.html"));
 		$squelette = $sommaire ;
