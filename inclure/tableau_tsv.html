@@ -1,0 +1,10 @@
+<table class="ui">
+<BOUCLE_lignes(DATA){source csv, #ENV{tsv}}>
+<tr>
+<BOUCLE_colonnes(DATA){source table, #VALEUR}{1/2}>
+[(#_lignes:COMPTEUR_BOUCLE|=={1}|oui)<th>#VALEUR</th>]
+[(#_lignes:COMPTEUR_BOUCLE|=={1}|non)<td>#VALEUR</td>]
+</BOUCLE_colonnes>
+</tr>
+</BOUCLE_lignes>
+</table>

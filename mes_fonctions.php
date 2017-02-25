@@ -50,3 +50,36 @@ function public_styliser($fond, $contexte, $lang='', $connect='', $ext='html') {
 	return array($squelette, $ext, $ext, "$squelette.$ext");
 }
 
+// convertir un tableau (ou plusieurs) HTML sur une page web en tsv.
+// [(#VAL{https://www.challenges.fr/classements/fortune/}|table2tsv)]
+
+
+function table2tsv($url){
+	
+	// recuperer la page
+	$curl = curl_init($url);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($curl, CURLOPT_COOKIESESSION, true);
+	$page = curl_exec($curl);
+	curl_close($curl);
+
+	// trouver des tableaux HTML
+	$tables = extraire_balises($page, "table");
+
+	// convertir en tsv
+	foreach($tables as $t){
+		$d = preg_replace("/\R/","", $t);
+		$d = preg_replace("/<t(d|h)[^>]*>/i","	", $d);
+		$d = preg_replace("/<tr>/i", "\n", $d);
+		$d = supprimer_tags($d);
+		$d = preg_replace("/ +/", " ", $d);
+		$d = preg_replace("/^ *	 */im", "", $d);
+		$d = trim($d);
+	}
+
+	$data .= $d ."\n\nSource : " . $url . "\n\n" ;
+
+	return $data ;
+
+
+}
