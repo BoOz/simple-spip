@@ -36,6 +36,7 @@ Pour créer un nouveau projet `simple-spip` nommé `mon_site`, taper dans le ter
 svn co svn://trac.rezo.net/spip/branches/spip-3.1 mon_site
 cd mon_site
 git clone https://github.com/BoOz/simple-spip.git
+
 ```
 Créer un repertoire `www` pour le projet.
 
