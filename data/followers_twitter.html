@@ -1,4 +1,6 @@
 #CACHE{0}
-<BOUCLE_followers(DATA){source file, https://twitter.com/mdiplo}{valeur == 'data-nav="followers"'}>
+#SET{followers,'data-nav="followers"'}
+<BOUCLE_followers(DATA){source file, https://twitter.com/spip}{valeur == #GET{followers}}>
 [(#VALEUR|match{title="(.*)",1}|replace{ abonnés})]
 </BOUCLE_followers>
+
