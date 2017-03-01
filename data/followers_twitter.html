@@ -1,6 +1,6 @@
 #CACHE{0}
 #SET{followers,'data-nav="followers"'}
 <BOUCLE_followers(DATA){source file, https://twitter.com/spip}{valeur == #GET{followers}}>
-[(#VALEUR|match{title="(.*)",1}|replace{ abonnés})]
+[<span title="[(#VALEUR|match{title="(.*)",1}|strtolower)]">(#VALEUR|match{title="(.*)",1}|replace{ abonnés}|trim|replace{ \d+$, k})</span>]
 </BOUCLE_followers>
 
