@@ -54,7 +54,7 @@ function public_styliser($fond, $contexte, $lang='', $connect='', $ext='html') {
 // [(#VAL{https://www.challenges.fr/classements/fortune/}|table2tsv)]
 
 
-function table2tsv($url){
+function table2tsv($url, $ecrire_fichier = false){
 	
 	// recuperer la page
 	$curl = curl_init($url);
@@ -63,6 +63,8 @@ function table2tsv($url){
 	$page = curl_exec($curl);
 	curl_close($curl);
 
+	// titre de la page
+	$titre = textebrut(extraire_balise($page, "title"));
 	// trouver des tableaux HTML
 	$tables = extraire_balises($page, "table");
 
@@ -77,7 +79,7 @@ function table2tsv($url){
 		$d = trim($d);
 	}
 
-	$data .= $d ."\n\nSource : " . $url . "\n\n" ;
+	$data .= $d ."\n\n" . "Source" ."\t" . $titre . "\t" . $url ."\n" ;
 
 	return $data ;
 
