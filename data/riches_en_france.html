@@ -1,4 +1,16 @@
 <h3>Classement Challenges</h3>
 <p>https://www.challenges.fr/classements/fortune/</p>
 
-<INCLURE{fond=inclure/tableau_tsv,tsv=#VAL{https://www.challenges.fr/classements/fortune/}|table2tsv}>
+[(#REM)
+	Afficher le tableau des données sources
+	Générer une version tsv
+]
+
+#SET{riches_en_france,#VAL{https://www.challenges.fr/classements/fortune/}|table2tsv}
+<INCLURE{fond=inclure/tableau_tsv,tsv=#GET{riches_en_france}}>
+
+<br>
+
+<textarea>
+#GET{riches_en_france}
+</textarea>

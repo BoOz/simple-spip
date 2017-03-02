@@ -1,10 +1,24 @@
-<table class="ui">
-<BOUCLE_lignes(DATA){source csv, #ENV{tsv}}>
-<tr>
-<BOUCLE_colonnes(DATA){source table, #VALEUR}{1/2}>
-[(#_lignes:COMPTEUR_BOUCLE|=={1}|oui)<th>#VALEUR</th>]
-[(#_lignes:COMPTEUR_BOUCLE|=={1}|non)<td>#VALEUR</td>]
-</BOUCLE_colonnes>
-</tr>
-</BOUCLE_lignes>
-</table>
+<div class="hauteur_limitee">
+	<table class="ui celled table">
+	<BOUCLE_lignes(DATA){source csv, #ENV{tsv}}>
+		<B_entete>
+		<thead>
+			<tr>
+			<BOUCLE_entete(DATA){source table, #VALEUR}{1/2}{si #_lignes:COMPTEUR_BOUCLE|=={1}}>
+				<th>#VALEUR</th>
+			</BOUCLE_entete>
+			</tr>
+		</thead>
+		<tbody>
+		</B_entete>
+		<B_colonnes>
+			<tr>
+			<BOUCLE_colonnes(DATA){source table, #VALEUR}{1/2}{si #_lignes:COMPTEUR_BOUCLE|>={2}}>
+				<td>#VALEUR</td>
+			</BOUCLE_colonnes>
+			</tr>
+		</B_colonnes>
+	</BOUCLE_lignes>
+		</tbody>
+	</table>
+</div>
