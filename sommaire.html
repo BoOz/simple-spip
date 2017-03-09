@@ -73,7 +73,7 @@ $(document)
 		$(window).focus(function() {
 			$('.live_focus').each(function( index ) {
 				// alert( index + ": " + $( this ).attr("data-fond") );
-				$( this ).load("spip.php?action=async_load&async_fond=" + $(this).attr("data-fond") , function(response) {
+				$( this ).get("spip.php?action=async_load&async_fond=" + $(this).attr("data-fond") , function(response) {
 					if(response.match(/^Erreur/i)){
 						$(this).addClass("erreur");
 					}
