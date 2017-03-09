@@ -48,20 +48,14 @@ $(document)
 		
 		$( ".async_load" ).each(function( index ) {
 			// alert( index + ": " + $( this ).attr("data-fond") );
-			$( this ).load("spip.php?action=async_load&async_fond=" + $(this).attr("data-fond") , function(response, status) {
-					if (status == "error") {
-						$(this).html("<a href='#' class='reload_soap'>reload</a>");
+			$( this ).get("spip.php?action=async_load&async_fond=" + $(this).attr("data-fond") , function(response) {
+					if(response.match(/^Erreur/i)){
 						$(this).addClass("erreur");
-						return false;
-					}else{
-							if(response.match(/^Erreur/i)){
-								$(this).addClass("erreur");
-							}
-							if(response.length>250){
-								$(this).addClass("soap").addClass("erreur");
-							}
-							$(this).not(".erreur").addClass("ok");
 					}
+					if(response.length>250){
+						$(this).addClass("soap").addClass("erreur");
+					}
+					$(this).not(".erreur").addClass("ok");
 			});
 		});
 
@@ -79,25 +73,17 @@ $(document)
 		$(window).focus(function() {
 			$('.live_focus').each(function( index ) {
 				// alert( index + ": " + $( this ).attr("data-fond") );
-				$( this ).load("spip.php?action=async_load&async_fond=" + $(this).attr("data-fond") , function(response, status) {
-						if (status == "error") {
-							$(this).html("<a href='#' class='reload_soap'>reload</a>");
-							$(this).addClass("erreur");
-							return false;
-						}else{
-								if(response.match(/^Erreur/i)){
-									$(this).addClass("erreur");
-								}
-								if(response.length>250){
-									$(this).addClass("soap").addClass("erreur");
-								}
-								$(this).not(".erreur").addClass("ok");
-						}
+				$( this ).load("spip.php?action=async_load&async_fond=" + $(this).attr("data-fond") , function(response) {
+					if(response.match(/^Erreur/i)){
+						$(this).addClass("erreur");
+					}
+					if(response.length>250){
+						$(this).addClass("soap").addClass("erreur");
+					}
+					$(this).not(".erreur").addClass("ok");
 				});
-				});
-			}
-		);
-		
+			});
+		});
 		
 		// Ajout ui pour limiter la hauteur des conteneurs html.
 		function limite_hauteur() {
