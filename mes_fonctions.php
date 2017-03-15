@@ -57,7 +57,7 @@ function affstat($num){
 	
 	if($num > 1000){
 		$num = $num / 1000 ;
-		$ext = " K" ;
+		$ext = "&nbsp;K" ;
 		$num = number_format($num, 1, ',', ' ') . "$ext" ;
 	}
 	
