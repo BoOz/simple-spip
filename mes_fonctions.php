@@ -50,6 +50,20 @@ function public_styliser($fond, $contexte, $lang='', $connect='', $ext='html') {
 	return array($squelette, $ext, $ext, "$squelette.$ext");
 }
 
+
+// affichage de stats
+// 5 200 => 5,2 K
+function affstat($num){
+	
+	if($num > 1000){
+		$num = $num / 1000 ;
+		$ext = " K" ;
+		$num = number_format($num, 1, ',', ' ') . "$ext" ;
+	}
+	
+	return $num ;
+}
+
 // convertir un tableau (ou plusieurs) HTML sur une page web en tsv.
 // [(#VAL{https://www.challenges.fr/classements/fortune/}|table2tsv)]
 
