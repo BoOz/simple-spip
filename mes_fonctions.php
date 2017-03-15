@@ -55,7 +55,7 @@ function public_styliser($fond, $contexte, $lang='', $connect='', $ext='html') {
 // 5 200 => 5,2 K
 function affstat($num){
 	
-	if($num > 1000){
+	if($num > 999){
 		$num = $num / 1000 ;
 		$ext = "&nbsp;K" ;
 		$num = number_format($num, 1, ',', ' ') . "$ext" ;
