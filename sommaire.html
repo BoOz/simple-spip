@@ -85,6 +85,11 @@ $(document)
 		// formulaires
 		$('.ui.dropdown').dropdown();
 		$('.ui.radio.checkbox').checkbox();
+		
+		$.datepicker.setDefaults( $.datepicker.regional[ "fr" ] );
+		$( ".datepicker" ).datepicker({
+			dateFormat: "yy-mm-dd"
+		});
 
 });
 </script>
