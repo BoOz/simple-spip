@@ -58,7 +58,7 @@ function affstat($num){
 	if($num > 999){
 		$num = $num / 1000 ;
 		$ext = "&nbsp;K" ;
-		$num = number_format($num, 1, ',', ' ') . "$ext" ;
+		$num = preg_replace("/,0&nbsp;K$/", "&nbsp;K", number_format($num, 1, ',', ' ') . "$ext") ;
 	}
 	
 	return $num ;
