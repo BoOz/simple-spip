@@ -6,37 +6,35 @@
 [(#SPIP_VERSION|>={3}|oui) #SET{url_creer_article,ecrire/?exec=article_edit&id_rubrique=1&new=oui} ]
 
 <div class="ui hidden divider"></div>
-
 <BOUCLE_maj(ARTICLES){id_rubrique=1}{statut IN prop,prepa,publie}{!par maj}{0,1}>#SET{id,#ID_ARTICLE}
-<div class="ui left aligned container">
-	<div class="ui segment">
-		[<p class="ui left aligned container">
-			<i class="refresh icon"></i>
-			<a href="#" title="Dernière mise à jour le [(#MAJ|affdate)] à [(#MAJ|affdate{H\hi s\s\e\c})]">(#MAJ|date_relative)</a>
-		</p>]
+	<div class="ui left aligned container">
+		<div class="ui segment">
+			[<p class="ui left aligned container">
+				<i class="refresh icon"></i>
+				<a href="#" title="Dernière mise à jour le [(#MAJ|affdate)] à [(#MAJ|affdate{H\hi s\s\e\c})]">(#MAJ|date_relative)</a>
+			</p>]
+		</div>
+	</div>
+	<div class="ui hidden divider"></div>
+</BOUCLE_maj>
+
+<BOUCLE_principale(ARTICLES){id_article=#ENV{id_article,1}}{statut IN prop,prepa,publie}>
+
+<div class="ui right floated segment">
+	<i class="icon code"></i>
+	<div class="ui secondary vertical pointing menu">
+		<BOUCLE_r(ARTICLES){id_rubrique}{statut IN prop,prepa,publie}{!par maj}>
+		<a class="item[ (#EXPOSE|oui)active]" href="[(#URL_PAGE{wiki,id_article=#ID_ARTICLE})]">
+			#TITRE
+		</a>
+		</BOUCLE_r>
+		<a class="item[ (#EXPOSE|oui)active]" href="#GET{url_creer_article}">
+			+ ajouter un article
+		</a>
 	</div>
 </div>
 
-<div class="ui hidden divider"></div>
-
-</BOUCLE_maj>
-<BOUCLE_principale(ARTICLES){id_article=#ENV{id_article,1}}{statut IN prop,prepa,publie}>
-
 <div class="ui text container">
-	<div class="ui right floated segment">
-	    <i class="icon code"></i>
-		<div class="ui secondary vertical pointing menu">
-			<BOUCLE_r(ARTICLES){id_rubrique}{statut IN prop,prepa,publie}{!par maj}>
-			<a class="item[ (#EXPOSE|oui)active]" href="[(#URL_PAGE{wiki,id_article=#ID_ARTICLE})]">
-				#TITRE
-			</a>
-			</BOUCLE_r>
-			<a class="item[ (#EXPOSE|oui)active]" href="#GET{url_creer_article}">
-				+ ajouter un article
-			</a>
-		</div>
-	</div>
-	
 	[(#REM) Contenu principal : contenu de l'article ]
 	<div class="hentry ui" id="contenu">
 		
@@ -50,8 +48,8 @@
 				</div>
 				</h2>
 			</div>
-	
-	
+			
+			
 			[(#REM) Inclure le modele des liens de traductions ]
 			#MODELE{article_traductions}
 		</div>
@@ -60,7 +58,7 @@
 			[<div class="#EDIT{chapo} chapo">(#CHAPO|image_reduire{500,0})</div>]
 			[<div class="#EDIT{texte} texte entry-content">(#TEXTE|image_reduire{500,0})</div>]
 		</div>
-	
+		
 	</div>
 </div>
 </BOUCLE_principale>
