@@ -47,8 +47,19 @@ $(document)
 		;
 		
 		$( ".async_load" ).each(function( index ) {
+				// calcul du lien
+				var query = "";
+				var parametres = $( this ).attr("data-param").split(",");
+				if(parametres){
+					var index;
+					for (index = 0; index < parametres.length; ++index) {
+						if(index % 2 == 0){
+							query = query + "&" + parametres[index] + "=" + parametres[index + 1] ;
+						}
+					}
+				}
 			// alert( index + ": " + $( this ).attr("data-fond") );
-			$( this ).load("spip.php?action=async_load&async_fond=" + $(this).attr("data-fond"));
+			$( this ).load("spip.php?action=async_load&async_fond=" + $(this).attr("data-fond") + query);
 		});
 
 		// alertes
@@ -63,9 +74,21 @@ $(document)
 
 		// Les infos en temps réèl se rechargent au focus sur la page.
 		$(window).focus(function() {
+				
 			$('.live_focus').each(function( index ) {
+				// calcul du lien
+				var query = "";
+				var parametres = $( this ).attr("data-param").split(",");
+				if(parametres){
+					var index;
+					for (index = 0; index < parametres.length; ++index) {
+						if(index % 2 == 0){
+							query = query + "&" + parametres[index] + "=" + parametres[index + 1] ;
+						}
+					}
+				}
 				// alert( index + ": " + $( this ).attr("data-fond") );
-				$( this ).load("spip.php?action=async_load&async_fond=" + $(this).attr("data-fond"));
+				$( this ).load("spip.php?action=async_load&async_fond=" + $(this).attr("data-fond") + query);
 			});
 		});
 		
