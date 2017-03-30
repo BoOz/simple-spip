@@ -16,13 +16,13 @@ Simple-spip est un modèle de site SPIP (www.spip.net) qui permet d'afficher des
 
 Charger en ajax le bloc `inclure/alertes.html` avec `class="async_load"` et `data-fond="inclure/alertes"`
 ```
-<div id="alertes" data-fond="inclure/alertes" class="async_load"></div>
+<div id="alertes" data-fond="inclure/alertes" data-param="var,value,var2,value2" class="async_load"></div>
 ```
 ### Blocs en temps réel
 
 Recharger un bloc au focus avec `class=live_focus`
 ```
-<div id="temps_reel" data-fond="inclure/live_focus" class="async_load live_focus">
+<div id="temps_reel" data-fond="inclure/live_focus" data-param="var,value,var2,value2" class="async_load live_focus">
 ```
     
 ### Mode accès restreint
