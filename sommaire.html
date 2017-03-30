@@ -49,7 +49,7 @@ $(document)
 		$( ".async_load" ).each(function( index ) {
 				// calcul du lien
 				var query = "";
-				if($( this ).attr("data-param").length() > 0){
+				if($( this ).attr("data-param")){
 					var parametres = $( this ).attr("data-param").split(",");
 					if(parametres)
 						query = "&" + "param=" + parametres ;
@@ -74,7 +74,7 @@ $(document)
 			$('.live_focus').each(function( index ) {
 				// calcul du lien
 				var query = "";
-				if($( this ).attr("data-param").length() > 0){
+				if($( this ).attr("data-param")){
 					var parametres = $( this ).attr("data-param").split(",");
 					if(parametres)
 						query = "&" + "param=" + parametres ;
@@ -88,7 +88,7 @@ $(document)
 		$('.live_click').click(function( index ) {
 			// calcul du lien
 			var query = "";
-			if($( this ).attr("data-param").length() > 0){
+			if($( this ).attr("data-param")){
 				var parametres = $( this ).attr("data-param").split(",");
 				if(parametres)
 					query = "&" + "param=" + parametres ;
