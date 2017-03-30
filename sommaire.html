@@ -80,6 +80,18 @@ $(document)
 			});
 		});
 		
+		// Les infos en temps réèl se chargent au clic.
+		$('.live_click').click(function( index ) {
+			// calcul du lien
+			var query = "";
+			var parametres = $( this ).attr("data-param");
+			if(parametres)
+				query = "&param=" + parametres ;
+			// alert( index + ": " + $( this ).attr("data-fond") );
+			$( this ).load("spip.php?action=async_load&async_fond=" + $(this).attr("data-fond") + query);
+		});
+		
+		
 		// Ajout ui pour limiter la hauteur des conteneurs html.
 		function limite_hauteur() {
 			$('.hauteur_limitee').each(function(){
