@@ -150,8 +150,12 @@ $.fn.search = function(parameters) {
                 result  = module.get.result(name, results),
                 returnedValue
               ;
+              
+              // console.log(name,"allo");
+              // result tout court marche pas, title oui
+              
               if( $.isFunction(settings.onSelect) ) {
-                if(settings.onSelect.call(element, result, results) === false) {
+                if(settings.onSelect.call(element, title, results) === false) {
                   module.debug('Custom onSelect callback cancelled default select action');
                   return;
                 }
