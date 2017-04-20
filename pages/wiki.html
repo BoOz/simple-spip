@@ -18,7 +18,7 @@
 	<div class="ui hidden divider"></div>
 </BOUCLE_maj>
 
-<BOUCLE_principale(ARTICLES){id_article=#ENV{id_article,1}}{statut IN prop,prepa,publie}>
+<BOUCLE_principale(ARTICLES){id_article=#ENV{id_article,#GET{id}}}{statut IN prop,prepa,publie}>
 
 <div class="ui right floated segment">
 	<i class="icon code"></i>
