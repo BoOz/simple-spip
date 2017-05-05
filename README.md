@@ -38,10 +38,9 @@ Recharger un bloc au clic avec `class=live_click`
 Pour créer un nouveau projet `simple-spip` nommé `mon_site`, taper dans le terminal :
 
 ```
-svn co svn://trac.rezo.net/spip/branches/spip-3.1 mon_site
 cd mon_site
+svn co svn://trac.rezo.net/spip/branches/spip-3.1/ ./
 git clone https://github.com/BoOz/simple-spip.git
-
 ```
 Créer un repertoire `www` pour le projet.
 
