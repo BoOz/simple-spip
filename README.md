@@ -34,7 +34,9 @@ Recharger un bloc au clic avec `class=live_click`
 - Avec l'option accès restreint activée, l'accès est soumis à l'identification par email et mot de passe.
 
 ### Afficher du code
+```
 [<code><pre>(#ENV**|unserialize)</pre></code>]
+```
 
 ## Installation
 
