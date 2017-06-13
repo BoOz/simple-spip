@@ -33,6 +33,9 @@ Recharger un bloc au clic avec `class=live_click`
 ### Mode accès restreint
 - Avec l'option accès restreint activée, l'accès est soumis à l'identification par email et mot de passe.
 
+### Afficher du code
+[<code><pre>(#ENV**|unserialize)</pre></code>]
+
 ## Installation
 
 Pour créer un nouveau projet `simple-spip` nommé `mon_site`, taper dans le terminal :
