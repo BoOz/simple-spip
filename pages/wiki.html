@@ -7,15 +7,6 @@
 
 <div class="ui hidden divider"></div>
 <BOUCLE_maj(ARTICLES){id_rubrique=1}{statut IN prop,prepa,publie}{!par maj}{0,1}>#SET{id,#ID_ARTICLE}
-	<div class="ui left aligned container">
-		<div class="ui segment">
-			[<p class="ui left aligned container">
-				<i class="refresh icon"></i>
-				<a href="#" title="Dernière mise à jour le [(#MAJ|affdate)] à [(#MAJ|affdate{H\hi s\s\e\c})]">(#MAJ|date_relative)</a>
-			</p>]
-		</div>
-	</div>
-	<div class="ui hidden divider"></div>
 </BOUCLE_maj>
 
 <BOUCLE_principale(ARTICLES){id_article=#ENV{id_article,#GET{id}}}{statut IN prop,prepa,publie}>
@@ -44,7 +35,7 @@
 				<p><small><abbr class="published" title="[(#DATE_MODIF|date_iso)]">[(#DATE_MODIF|date_interface) ]</abbr></small></p>
 				<h2 class="ui header #EDIT{titre} entry-title">#TITRE
 				<div class="sub header #EDIT{soustitre} soustitre">
-					[(#SOUSTITRE|sinon{wiki})] 
+					[(#SOUSTITRE|sinon{" "})] 
 				</div>
 				</h2>
 			</div>

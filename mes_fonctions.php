@@ -55,10 +55,17 @@ function public_styliser($fond, $contexte, $lang='', $connect='', $ext='html') {
 // 5 200 => 5,2 K
 function affstat($num){
 	
+	$num_orig = $num ;
+	
 	if($num > 999){
 		$num = $num / 1000 ;
 		$ext = "&nbsp;K" ;
 		$num = preg_replace("/,0&nbsp;K$/", "&nbsp;K", number_format($num, 1, ',', ' ') . "$ext") ;
+	}
+	if($num_orig > 1000000){
+		$num = $num_orig / 1000000 ;
+		$ext = "&nbsp;M" ;
+		$num = preg_replace("/,0&nbsp;M$/", "&nbsp;M", number_format($num, 1, ',', ' ') . "$ext") ;
 	}
 	
 	return $num ;
