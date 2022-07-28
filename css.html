@@ -7,10 +7,12 @@ body{
 	background-color: #ffffff;
 	height: 100%;
 }
+
 a {
 	color: #be2e0d;
 	color: rgba(0, 0, 0, 0.8);
 }
+
 a:hover{
 	color:#be2a0d !important;
 	color: rgba(0, 0, 0, 0.8);	
@@ -24,12 +26,28 @@ a:hover{
 .ui.menu{
 	max-width: 960px;
 }
-	.ui.menu:after{
-		margin-top:2em;
-	}
+
+.ui.menu:after{
+	margin-top:2em;
+}
+
 .ui.menu:last-child {
 	margin-bottom: 2em;
 }
+
+ul.pagination-items{
+	margin:0;
+	padding:0}
+li.pagination-item{
+	display:inline-block
+}
+li.pagination-item:after{
+	content : "|" 
+}
+.pagination-item .pagination-item-label{
+	padding: 0 7px 0 3px;
+}
+
 #spip-admin{
 	position:absolute;
 	right:0;
