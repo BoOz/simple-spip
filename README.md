@@ -1,6 +1,9 @@
 # simple-spip
 Installer rapidement un site SPIP + Semantic-ui
 
+Ce projet a déménagé sur https://git.spip.net/booz/simple-spip
+
+
 
 Simple-spip est un modèle de site SPIP (www.spip.net) qui permet d'afficher des données et des pages web rapidement.
 
